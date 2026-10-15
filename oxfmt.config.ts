@@ -31,6 +31,16 @@ export default defineConfig({
 
 	objectWrap: 'preserve',
 
+	overrides: [
+		{
+			files: ['**/*.yaml', '**/*.yml'],
+			options: {
+				tabWidth: 2,
+				useTabs: false
+			}
+		}
+	],
+
 	printWidth: 150,
 
 	proseWrap: 'preserve',
