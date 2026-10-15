@@ -9,7 +9,7 @@
 		"noImplicitReturns": true,
 		"noPropertyAccessFromIndexSignature": true,
 		"noUncheckedIndexedAccess": true,
-		"noUnusedLocals": false, //Oxlint catches this 
+		"noUnusedLocals": false, //Oxlint catches this
 		"noUnusedParameters": true,
 		"strict": true,
 		"allowArbitraryExtensions": false,

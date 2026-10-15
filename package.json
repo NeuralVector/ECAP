@@ -18,15 +18,16 @@
 	"type": "module",
 	"imports": {},
 	"scripts": {},
+	"devDependencies": {
+		"oxfmt": "^0.73.0",
+		"oxlint": "^1.88.0",
+		"typescript": "^7.0.2"
+	},
 	"devEngines": {
 		"packageManager": {
 			"name": "pnpm",
 			"version": ">=12",
 			"onFail": "warn"
 		}
-	},
-	"devDependencies": {
-		"oxlint": "^1.88.0",
-		"typescript": "^7.0.2"
 	}
 }

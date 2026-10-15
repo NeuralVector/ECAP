@@ -1,7 +1,7 @@
 {
-  "oxc.lint.customization": {
-    "no-unused-vars": {
-      "severity": "off"
-    }
-  }
+	"oxc.lint.customization": {
+		"no-unused-vars": {
+			"severity": "off"
+		}
+	}
 }
