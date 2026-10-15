@@ -26,6 +26,7 @@
 		"fastify": "^5.0.0"
 	},
 	"devDependencies": {
+		"@types/node": "^26.6.5",
 		"lefthook": "^2.2.2",
 		"oxfmt": "^0.73.0",
 		"oxlint": "^1.88.0",
