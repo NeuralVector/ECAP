@@ -1,4 +1,8 @@
 pre-commit:
   jobs:
+    - name: format
+      glob: '*.{js,jsx,ts,tsx,json,jsonc,css,scss,md}'
+      run: pnpm exec oxfmt {staged_files}
+      stage_fixed: true
     - name: typecheck
       run: pnpm typecheck
