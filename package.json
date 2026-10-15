@@ -17,17 +17,24 @@
 	},
 	"type": "module",
 	"imports": {},
-	"scripts": {},
+	"scripts": {
+		"dev": "tsx watch apps/api/src/server.ts",
+		"start": "tsx apps/api/src/server.ts"
+	},
+	"dependencies": {
+		"fastify": "^5.0.0"
+	},
+	"devDependencies": {
+		"oxfmt": "^0.73.0",
+		"oxlint": "^1.88.0",
+		"tsx": "^4.20.0",
+		"typescript": "^7.0.2"
+	},
 	"devEngines": {
 		"packageManager": {
 			"name": "pnpm",
 			"version": ">=12",
 			"onFail": "warn"
 		}
-	},
-	"devDependencies": {
-		"oxfmt": "^0.73.0",
-		"oxlint": "^1.88.0",
-		"typescript": "^7.0.2"
 	}
 }
