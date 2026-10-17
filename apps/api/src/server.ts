@@ -1,10 +1,8 @@
 import app from './app.ts';
-
-const port = Number(process.env['PORT'] ?? 3000);
-const host = process.env['HOST'] ?? '0.0.0.0';
+import config from './config.ts';
 
 try {
-	await app.listen({ port, host });
+	await app.listen(config.get('server'));
 } catch (error) {
 	console.error(error);
 	process.exitCode = 1;
