@@ -1,0 +1,28 @@
+{
+	"name": "ECAP",
+	"private": "true",
+	"bugs": {
+		"url": "https://github.com/NeuralVector/ECAP/issues",
+		"email": "rashinkar.anish@gmail.com"
+	},
+	"license": "UNLICENSED",
+	"author": {
+		"name": "NeuralVector (GitHub)",
+		"email": "rashinkar.anish@gmail.com",
+		"url": "https://github.com/NeuralVector"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/NeuralVector/ECAP.git"
+	},
+	"type": "module",
+	"imports": {},
+	"scripts": {},
+	"devEngines": {
+		"packageManager": {
+			"name": "pnpm",
+			"version": ">=12",
+			"onFail": "warn"
+		}
+	}
+}
