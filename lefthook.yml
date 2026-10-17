@@ -2,6 +2,8 @@ pre-commit:
   jobs:
     - name: typecheck
       run: pnpm typecheck
+    - name: lint
+      run: pnpm lint
     - name: format
       glob: '*.{js,jsx,ts,tsx,json,jsonc,css,scss,md,yml,yaml}'
       run: pnpm exec oxfmt {staged_files} --no-error-on-unmatched-pattern
