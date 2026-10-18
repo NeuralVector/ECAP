@@ -16,9 +16,12 @@
 		"url": "git+https://github.com/NeuralVector/ECAP.git"
 	},
 	"type": "module",
-	"imports": {},
+	"imports": {
+		"#web": "./apps/web",
+		"#web/*": "./apps/web/*"
+	},
 	"scripts": {
-		"build": "rolldown -c",
+		"build": "next build apps/web && rolldown -c",
 		"dev": "tsx watch apps/api/src/server.ts",
 		"start": "NODE_ENV=production node dist/server.js",
 		"typecheck": "tsc --noEmit",
@@ -28,11 +31,16 @@
 	},
 	"dependencies": {
 		"convict": "^6.2.5",
-		"fastify": "^5.0.0"
+		"fastify": "^5.0.0",
+		"next": "^16.4.2",
+		"react": "^19.3.1",
+		"react-dom": "^19.3.1"
 	},
 	"devDependencies": {
 		"@types/convict": "^6.1.6",
 		"@types/node": "^26.6.5",
+		"@types/react": "^19.3.0",
+		"@types/react-dom": "^19.3.0",
 		"lefthook": "^2.2.2",
 		"oxfmt": "^0.73.0",
 		"oxlint": "^1.88.0",

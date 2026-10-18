@@ -1,7 +1,31 @@
+import { createRequire } from 'node:module';
+import { fileURLToPath } from 'node:url';
+
 import Fastify from 'fastify';
 
-const app = Fastify({ logger: true });
+const require = createRequire(import.meta.url);
+const next: typeof import('next').default = require('next');
 
-app.get('/', async () => ({ message: 'Hello from Fastify!' }));
+const app = Fastify({ logger: process.env['NODE_ENV'] !== 'production' });
+
+const nextApp = next({
+	dev: process.env['NODE_ENV'] !== 'production',
+	dir: fileURLToPath(import.meta.resolve('#web'))
+});
+
+await nextApp.prepare();
+const handleNext = nextApp.getRequestHandler();
+
+app.decorate('handleNext', handleNext);
+
+app.addHook('onClose', async () => {
+	await nextApp.close();
+});
+
+declare module 'fastify' {
+	interface FastifyInstance {
+		handleNext: typeof handleNext;
+	}
+}
 
 export default app;
