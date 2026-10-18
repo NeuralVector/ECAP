@@ -172,6 +172,9 @@ importers:
       fastify:
         specifier: ^5.0.0
         version: 5.12.7
+      fastify-decorators:
+        specifier: ^3.16.1
+        version: 3.16.1(@types/node@26.6.5)(fastify@5.12.7)
       next:
         specifier: ^16.4.2
         version: 16.4.2(@types/node@26.6.5)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
@@ -1172,6 +1175,16 @@ packages:
   fast-uri@4.2.2:
     resolution: {integrity: sha512-EwVpUMzLVNOmcWW0zi5G3JJwkopB6XXjnVvNBGfqrMMsVew2hkQWl5e/pe/CfYUeS6jt4cIO2MnamEW7v/7wPw==}
 
+  fastify-decorators@3.16.1:
+    resolution: {integrity: sha512-f4VPgB126g1PIvjx8zZabXviWUngz9xKsfmw9DxvWkJ0ycrbnDY+mivJ6qtDHCcJqyBg26fgunzNCBK/j8nbhw==}
+    engines: {node: '>= 10.16.0'}
+    peerDependencies:
+      '@types/node': '*'
+      fastify: ^3.0.1 || ^4.0.0 || ^5.0.0
+
+  fastify-plugin@4.5.1:
+    resolution: {integrity: sha512-stRHYGeuqpEZTL1Ef0Ovr2ltazUT9g844X5z/zEBFLG8RYlpDiOCIG+ATvYEp+/zmc7sN29mcIMp8gvYplYPIQ==}
+
   fastify@5.12.7:
     resolution: {integrity: sha512-v4pEPsTRPuqlDIYiQFB+BHjVN4SdHX9u0ABk0ZDUKbbdY1vsNryUd1j4Z+jQEZajvYIVk047Kimva9/AJ79GYw==}
 
@@ -2040,6 +2053,14 @@ snapshots:
   fast-uri@3.1.8: {}
 
   fast-uri@4.2.2: {}
+
+  fastify-decorators@3.16.1(@types/node@26.6.5)(fastify@5.12.7):
+    dependencies:
+      '@types/node': 26.6.5
+      fastify: 5.12.7
+      fastify-plugin: 4.5.1
+
+  fastify-plugin@4.5.1: {}
 
   fastify@5.12.7:
     dependencies:

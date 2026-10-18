@@ -2,6 +2,7 @@ import { createRequire } from 'node:module';
 import { fileURLToPath } from 'node:url';
 
 import Fastify from 'fastify';
+import { bootstrap } from 'fastify-decorators';
 
 const require = createRequire(import.meta.url);
 const next: typeof import('next').default = require('next');
@@ -27,5 +28,10 @@ declare module 'fastify' {
 		handleNext: typeof handleNext;
 	}
 }
+
+app.register(bootstrap, {
+	directory: fileURLToPath(new URL('./controllers', import.meta.url)),
+	mask: /\.controller\.[jt]s$/
+});
 
 export default app;
