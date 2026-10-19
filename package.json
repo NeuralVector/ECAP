@@ -23,14 +23,16 @@
 	},
 	"scripts": {
 		"build": "next build apps/web && rolldown -c",
-		"dev": "tsx watch apps/api/src/server.ts",
-		"start": "NODE_ENV=production node dist/server.js",
+		"dev": "node --env-file-if-exists=.env --import tsx --watch-path=apps/api/src apps/api/src/server.ts",
+		"start": "NODE_ENV=production node --env-file-if-exists=.env dist/server.js",
 		"typecheck": "tsc --noEmit",
 		"lint": "oxlint",
 		"format": "oxfmt --write .",
 		"format:check": "oxfmt --check ."
 	},
 	"dependencies": {
+		"@clerk/backend": "^3.25.0",
+		"@clerk/nextjs": "^7.9.17",
 		"convict": "^6.2.5",
 		"fastify": "^5.0.0",
 		"fastify-decorators": "^3.16.1",

@@ -31,6 +31,10 @@ jobs:
   dev:
     name: Development server
     runs-on: ubuntu-latest
+    env:
+      NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY: pk_test_Y2xlcmsuZXhhbXBsZS5jb20k
+      CLERK_SECRET_KEY: sk_test_ci-placeholder
+      CLERK_AUTHORIZED_PARTIES: http://127.0.0.1:3000
 
     steps:
       - name: Checkout repository
@@ -71,6 +75,10 @@ jobs:
   build:
     name: Production build
     runs-on: ubuntu-latest
+    env:
+      NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY: pk_test_Y2xlcmsuZXhhbXBsZS5jb20k
+      CLERK_SECRET_KEY: sk_test_ci-placeholder
+      CLERK_AUTHORIZED_PARTIES: http://127.0.0.1:3000
 
     steps:
       - name: Checkout repository
@@ -96,6 +104,10 @@ jobs:
     name: Production server
     runs-on: ubuntu-latest
     needs: build
+    env:
+      NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY: pk_test_Y2xlcmsuZXhhbXBsZS5jb20k
+      CLERK_SECRET_KEY: sk_test_ci-placeholder
+      CLERK_AUTHORIZED_PARTIES: http://127.0.0.1:3000
 
     steps:
       - name: Checkout repository
