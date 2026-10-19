@@ -23,7 +23,7 @@
 	},
 	"scripts": {
 		"build": "next build apps/web && rolldown -c",
-		"dev": "node --env-file-if-exists=.env --import tsx --watch-path=apps/api/src apps/api/src/server.ts",
+		"dev": "tsx watch --exclude 'apps/web/.next/**' apps/api/src/server.ts",
 		"start": "NODE_ENV=production node --env-file-if-exists=.env dist/server.js",
 		"typecheck": "tsc --noEmit",
 		"lint": "oxlint",

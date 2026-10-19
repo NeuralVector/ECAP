@@ -16,14 +16,11 @@ export class ClerkAuth implements AuthInterface {
 			?.split(',')
 			.map((party) => party.trim())
 			.filter(Boolean);
-		if (!authorizedParties?.length) {
-			throw new Error('CLERK_AUTHORIZED_PARTIES must list the trusted application origins');
-		}
 
 		try {
 			const claims = await verifyToken(token, {
 				secretKey,
-				authorizedParties
+				...(authorizedParties?.length ? { authorizedParties } : {})
 			});
 			return typeof claims.sub === 'string' ? { id: claims.sub } : null;
 		} catch {

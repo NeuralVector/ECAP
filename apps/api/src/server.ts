@@ -1,3 +1,4 @@
+import './env.ts';
 import app from './app.ts';
 import config from './config.ts';
 

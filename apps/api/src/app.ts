@@ -23,6 +23,11 @@ const handleNext = nextApp.getRequestHandler();
 app.decorate('handleNext', handleNext);
 app.decorate('auth', clerkAuth);
 
+app.setNotFoundHandler(async (request, reply) => {
+	reply.hijack();
+	await handleNext(request.raw, reply.raw);
+});
+
 app.addHook('onClose', async () => {
 	await nextApp.close();
 });
